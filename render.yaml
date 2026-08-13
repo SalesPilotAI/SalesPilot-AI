@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: salespilot-ai
+    runtime: docker
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: OPENAI_MODEL
+        value: gpt-5.6-luna
